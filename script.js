@@ -12,21 +12,59 @@ document.querySelectorAll(".wrapper").forEach(wrapper => {
     };
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const prevButton = document.querySelector(".arrow.prev");
+    const nextButton = document.querySelector(".arrow.next");
+    const videoContainer = document.querySelector(".videos");
+    const dotsContainer = document.querySelector(".dots");
+    const videoSlides = document.querySelectorAll(".video-slide");
+    const slideWidth = 400 + 20; // 400px video width + 20px for padding
+    let currentIndex = 0;
+    const totalSlides = videoSlides.length;
 
-// Video Row Slider
-const videosContainer = document.querySelector(".videos");
-const prevButton = document.querySelector(".video-container .arrow.prev");
-const nextButton = document.querySelector(".video-container .arrow.next");
+    // Function to update active dot
+    function updateDots() {
+        document.querySelectorAll(".dot").forEach((dot, index) => {
+            dot.classList.toggle("active", index === currentIndex);
+        });
+    }
 
-let currentIndex = 0;
-const slideWidth = 400; // Width of each video slide
-const visibleSlides = 3; // Number of slides visible at a time
+    // Create dots dynamically
+    function createDots() {
+        videoSlides.forEach((_, index) => {
+            const dot = document.createElement("span");
+            dot.classList.add("dot");
+            if (index === 0) dot.classList.add("active");
+            dot.addEventListener("click", () => {
+                currentIndex = index;
+                videoContainer.scrollTo({ left: currentIndex * slideWidth, behavior: "smooth" });
+                updateDots();
+            });
+            dotsContainer.appendChild(dot);
+        });
+    }
 
-// Function to update the video slider position
-function updateVideos() {
-    const offset = -currentIndex * slideWidth;
-    videosContainer.style.transform = `translateX(${offset}px)`;
-}
+    nextButton.addEventListener("click", function () {
+        if (currentIndex < totalSlides - 1) {
+            currentIndex++;
+            videoContainer.scrollBy({ left: slideWidth, behavior: "smooth" });
+            updateDots();
+        }
+    });
+
+    prevButton.addEventListener("click", function () {
+        if (currentIndex > 0) {
+            currentIndex--;
+            videoContainer.scrollBy({ left: -slideWidth, behavior: "smooth" });
+            updateDots();
+        }
+    });
+
+    createDots();
+});
+
+
+
 
 // Previous button click event
 prevButton.addEventListener("click", () => {
