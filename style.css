@@ -32,11 +32,29 @@ body {
 }
 
 .authors {
-    font-size: 1.5rem;
-    font-weight: "";
-    margin-top: 10px;
+    display: flex; /* Align all authors in one line */
+    justify-content: center; /* Center the authors horizontally */
+    gap: 30px; /* Space between authors */
+    margin-top: 50px;
+}
+
+.author {
+    text-align: center; /* Align text of each author */
+}
+
+.name {
+    font-size: 1.3rem;
+    font-weight: bold;
     color: #333;
 }
+
+.affiliation {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 1px;
+}
+
+
 
 
 .hero-buttons {
