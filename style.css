@@ -32,29 +32,31 @@ body {
 }
 
 .authors {
-    display: flex; /* Align all authors in one line */
-    justify-content: center; /* Center the authors horizontally */
-    gap: 30px; /* Space between authors */
+    display: flex;
+    /* Align all authors in one line */
+    justify-content: center;
+    /* Center the authors horizontally */
+    gap: 30px;
+    /* Space between authors */
     margin-top: 50px;
 }
 
 .author {
-    text-align: center; /* Align text of each author */
+    text-align: center;
+    /* Align text of each author */
 }
 
 .name {
-    font-size: 1.3rem;
+    font-size: 1.0rem !important;
     font-weight: bold;
     color: #333;
 }
 
 .affiliation {
-    font-size: 1rem;
+    font-size: 1.0rem !important;
     color: #666;
     margin-top: 1px;
 }
-
-
 
 
 .hero-buttons {
@@ -116,8 +118,10 @@ body {
 
 .comparison-row {
     display: grid;
-    grid-template-columns: repeat(3, 500px); /* Two equal columns */
-    gap: 20px; /* Spacing between the sliders */
+    grid-template-columns: repeat(3, 500px);
+    /* Two equal columns */
+    gap: 20px;
+    /* Spacing between the sliders */
     justify-content: center;
 }
 
@@ -240,7 +244,8 @@ body {
 }
 
 /* Additional Sections */
-.about, .results {
+.about,
+.results {
     padding: 4rem 2rem;
     background: #f9f9f9;
     text-align: center;
@@ -272,14 +277,17 @@ footer {
 .videos {
     display: flex;
     overflow: hidden;
-    width: 1200px; /* 3 videos * 400px each */
+    width: 1200px;
+    /* 3 videos * 400px each */
     margin: 0 1rem;
 }
 
 .video-slide {
-    flex: 0 0 400px; /* Fixed width for each video */
+    flex: 0 0 400px;
+    /* Fixed width for each video */
     box-sizing: border-box;
-    padding: 0 10px; /* Spacing between videos */
+    padding: 0 10px;
+    /* Spacing between videos */
 }
 
 .video-slide video {
@@ -329,6 +337,3 @@ footer {
 .dot.active {
     background: #333;
 }
-
-
-
