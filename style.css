@@ -128,7 +128,7 @@ body {
 
 .comparison {
     padding: 4rem 2rem;
-    background: #fff;
+    background: #f9f9f9;
 }
 
 .wrapper {
@@ -138,8 +138,8 @@ body {
     max-width: 500px;
     margin: 0 auto;
     overflow: hidden;
-    background: #fff;
-    border: 0px solid #fff;
+    background: #f9f9f9;
+    border: 0px solid #f9f9f9;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
 }
 
