@@ -33,11 +33,8 @@ body {
 
 .authors {
     display: flex;
-    /* Align all authors in one line */
     justify-content: center;
-    /* Center the authors horizontally */
     gap: 30px;
-    /* Space between authors */
     margin-top: 50px;
 }
 
