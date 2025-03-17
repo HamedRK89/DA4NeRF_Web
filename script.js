@@ -1,6 +1,6 @@
 // Select all slider elements inside each .wrapper
 document.querySelectorAll(".wrapper").forEach(wrapper => {
-    const image = wrapper.querySelector(".image .image-2");
+    const image = wrapper.querySelector('.image .image-2, .image-4, .image-6');
     const slider = wrapper.querySelector(".slider input");
     const drag = wrapper.querySelector(".slider .dragLine");
 

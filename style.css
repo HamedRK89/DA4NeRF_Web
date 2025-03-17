@@ -281,6 +281,11 @@ body {
     text-align: center;
 }
 
+.citation {
+    padding: 4rem 2rem;
+    background: #a8a1a1;
+    text-align: left;
+}
 footer {
     padding: 2rem;
     background: #333;
