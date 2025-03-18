@@ -110,7 +110,7 @@ body {
 }
 
 .btn.data:hover {
-    background: #218838;
+    background: #218837;
     transform: translateY(-5px);
 }
 
@@ -286,6 +286,7 @@ body {
     background: #a8a1a1;
     text-align: left;
 }
+
 footer {
     padding: 2rem;
     background: #333;
