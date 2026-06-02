@@ -356,10 +356,11 @@ body {
     top: 0;
     left: 0;
     height: 100%;
-    width: 50%;
+    width: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    clip-path: inset(0 50% 0 0);
 }
 
 .wrapper .slider {

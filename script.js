@@ -23,8 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const drag    = wrapper.querySelector(".slider .dragLine");
 
         slider.addEventListener("input", () => {
-            drag.style.left    = slider.value + "%";
-            overlay.style.width = slider.value + "%";
+            drag.style.left        = slider.value + "%";
+            overlay.style.clipPath = `inset(0 ${100 - slider.value}% 0 0)`;
         });
     });
 
