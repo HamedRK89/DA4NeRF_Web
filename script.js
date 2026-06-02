@@ -15,16 +15,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // --------------------------------------------------------
-    // Image comparison sliders
+    // Image comparison sliders (curtain reveal)
     // --------------------------------------------------------
-    document.querySelectorAll(".wrapper").forEach(wrapper => {
-        const overlay = wrapper.querySelector(".img-overlay");
-        const slider  = wrapper.querySelector(".slider input");
-        const drag    = wrapper.querySelector(".slider .dragLine");
+    document.querySelectorAll(".comp-wrapper").forEach(wrapper => {
+        const leftClip = wrapper.querySelector(".comp-left-clip");
+        const leftImg  = wrapper.querySelector(".comp-left");
+        const divider  = wrapper.querySelector(".comp-divider");
+        const range    = wrapper.querySelector(".comp-range");
 
-        slider.addEventListener("input", () => {
-            drag.style.left        = slider.value + "%";
-            overlay.style.clipPath = `inset(0 ${100 - slider.value}% 0 0)`;
+        // The inner image must always be the full pixel width of the wrapper
+        // so background-size:cover scales identically on both sides.
+        function syncWidth() {
+            leftImg.style.width = wrapper.offsetWidth + "px";
+        }
+        syncWidth();
+        window.addEventListener("resize", syncWidth);
+
+        range.addEventListener("input", () => {
+            leftClip.style.width = range.value + "%";
+            divider.style.left   = range.value + "%";
         });
     });
 
