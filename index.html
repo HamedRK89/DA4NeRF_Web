@@ -4,181 +4,287 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeRF Project</title>
+    <title>Sparse NeRF Research</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>DA4NeRF</h1>
-            <p>Depth-aware Augmentation technique for Neural Radiance Fields</p>
-            <h3>Journal of Visual Communication and Image Representation</h3>
 
-            <div class="authors">
-                <div class="author">
-                    <p class="name">Hamed Razavi</p>
-                    <p class="affiliation">ULB-Be</p>
-                </div>
-                <div class="author">
-                    <p class="name">Jaime Sancho</p>
-                    <p class="affiliation">UPM-Es</p>
-                </div>
-                <div class="author">
-                    <p class="name">Gun Bang</p>
-                    <p class="affiliation">ETRI-Kr</p>
-                </div>
-                <div class="author">
-                    <p class="name">Gauthier Lafruit</p>
-                    <p class="affiliation">ULB-Be</p>
-                </div>
-                <div class="author">
-                    <p class="name">Eduardo Juarez</p>
-                    <p class="affiliation">UPM-Es</p>
-                </div>
-                <div class="author">
-                    <p class="name">Mehrdad Teratani</p>
-                    <p class="affiliation">ULB-Be</p>
-                </div>
-            </div>
-
-            <div class="hero-buttons">
-                <a href="https://github.com/your-repo" target="_blank" class="btn github">
-                    <i class="fab fa-github"></i>
-                    <span>GitHub</span>
-                </a>
-                <a href="https://arxiv.org/abs/your-paper" target="_blank" class="btn paper">
-                    <i class="fas fa-file-alt"></i>
-                    <span>Paper</span>
-                </a>
-                <a href="https://your-data-link.com" target="_blank" class="btn data">
-                    <i class="fas fa-database"></i>
-                    <span>Data</span>
-                </a>
-            </div>
+    <!-- Sticky Tab Navigation -->
+    <nav class="tab-nav">
+        <div class="site-brand">Sparse NeRF Research</div>
+        <div class="tab-buttons">
+            <button class="tab-btn active" data-tab="da4nerf">DA4NeRF</button>
+            <button class="tab-btn" data-tab="ddsnerf">DDSNeRF</button>
+            <button class="tab-btn" data-tab="mtnerf">MTNeRF</button>
         </div>
-    </section>
+    </nav>
 
+    <!-- ======================================================
+         DA4NeRF
+    ====================================================== -->
+    <section id="da4nerf" class="project-section active">
 
-    <!-- Video Row Section -->
-    <section class="video-row">
-        <h2>Video Showcase</h2>
-        <div class="video-container">
-            <button class="arrow prev">&#10094;</button> <!-- Left chevron -->
-            <div class="videos">
-                <div class="video-slide">
-                    <video width="400" height="300" controls loop muted autoplay>
-                        <source src="videos/0.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="video-slide">
-                    <video width="400" height="300" controls loop muted autoplay>
-                        <source src="videos/fortress_4_spiral_050000_rgb.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="video-slide">
-                    <video width="400" height="300" controls loop muted autoplay>
-                        <source src="videos/orchid_4_spiral_050000_rgb.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="video-slide">
-                    <video width="400" height="300" controls loop muted autoplay>
-                        <source src="videos/3.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="video-slide">
-                    <video width="400" height="300" controls loop muted autoplay>
-                        <source src="videos/4.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            </div>
-            <button class="arrow next">&#10095;</button> <!-- Right chevron -->
-        </div>
-        <div class="dots"></div> <!-- Navigation dots container -->
-    </section>
+        <div class="hero">
+            <div class="hero-content">
+                <h1>DA4NeRF</h1>
+                <p class="project-subtitle">Depth-aware Augmentation technique for Neural Radiance Fields</p>
+                <p class="venue">Journal of Visual Communication and Image Representation, 2025</p>
 
-
-    <!-- Image Comparison Section -->
-    <section class="comparison-row">
-        <div class="comparison">
-            <div class="wrapper">
-                <div class="image">
-                    <div class="image-1"></div>
-                    <div class="image-2"></div>
-                </div>
-                <div class="slider">
-                    <div class="dragLine">
-                        <span></span>
+                <div class="authors">
+                    <div class="author">
+                        <p class="name">Hamed Razavi</p>
+                        <p class="affiliation">ULB &mdash; Belgium</p>
                     </div>
-                    <input type="range" min="0" max="100" value="50">
-                </div>
-            </div>
-        </div>
-
-        <div class="comparison">
-            <div class="wrapper">
-                <div class="image">
-                    <div class="image-3"></div>
-                    <div class="image-4"></div>
-                </div>
-                <div class="slider">
-                    <div class="dragLine">
-                        <span></span>
+                    <div class="author">
+                        <p class="name">Jaime Sancho</p>
+                        <p class="affiliation">UPM &mdash; Spain</p>
                     </div>
-                    <input type="range" min="0" max="100" value="50">
-                </div>
-            </div>
-        </div>
-
-        <div class="comparison">
-            <div class="wrapper">
-                <div class="image">
-                    <div class="image-5"></div>
-                    <div class="image-6"></div>
-                </div>
-                <div class="slider">
-                    <div class="dragLine">
-                        <span></span>
+                    <div class="author">
+                        <p class="name">Gun Bang</p>
+                        <p class="affiliation">ETRI &mdash; Korea</p>
                     </div>
-                    <input type="range" min="0" max="100" value="50">
+                    <div class="author">
+                        <p class="name">Gauthier Lafruit</p>
+                        <p class="affiliation">ULB &mdash; Belgium</p>
+                    </div>
+                    <div class="author">
+                        <p class="name">Eduardo Juarez</p>
+                        <p class="affiliation">UPM &mdash; Spain</p>
+                    </div>
+                    <div class="author">
+                        <p class="name">Mehrdad Teratani</p>
+                        <p class="affiliation">ULB &mdash; Belgium</p>
+                    </div>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#" target="_blank" class="btn github">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.sciencedirect.com/science/article/pii/S1047320324003213" target="_blank" class="btn paper">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Paper</span>
+                    </a>
+                    <a href="#" target="_blank" class="btn data">
+                        <i class="fas fa-database"></i>
+                        <span>Dataset</span>
+                    </a>
                 </div>
             </div>
         </div>
-    </section>>
 
-    <!-- Additional Sections -->
-    <section class="about">
-        <h2>About the Project</h2>
-        <p>Details about the NeRF project...</p>
+        <!-- Video Carousel -->
+        <section class="video-row">
+            <h2>Video Showcase</h2>
+            <div class="video-container" data-carousel="da4nerf">
+                <button class="arrow prev">&#10094;</button>
+                <div class="videos">
+                    <div class="video-slide">
+                        <video width="400" height="300" controls loop muted autoplay>
+                            <source src="videos/0.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video-slide">
+                        <video width="400" height="300" controls loop muted autoplay>
+                            <source src="videos/fortress_4_spiral_050000_rgb.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video-slide">
+                        <video width="400" height="300" controls loop muted autoplay>
+                            <source src="videos/orchid_4_spiral_050000_rgb.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video-slide">
+                        <video width="400" height="300" controls loop muted autoplay>
+                            <source src="videos/3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video-slide">
+                        <video width="400" height="300" controls loop muted autoplay>
+                            <source src="videos/4.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <button class="arrow next">&#10095;</button>
+            </div>
+            <div class="dots" data-dots="da4nerf"></div>
+        </section>
+
+        <!-- Image Comparison -->
+        <section class="comparison-row">
+            <h2>Qualitative Comparison</h2>
+            <p class="comp-subtitle">Drag the slider to compare baseline NeRF (left) vs DA4NeRF (right)</p>
+            <div class="comparisons-grid">
+
+                <div class="comparison">
+                    <p class="comp-label">Fortress</p>
+                    <div class="wrapper">
+                        <div class="image">
+                            <div class="img-base" style="background-image: url('images/Fortress_000.png')"></div>
+                            <div class="img-overlay" style="background-image: url('images/Fortress_000_DA.png')"></div>
+                        </div>
+                        <div class="slider">
+                            <div class="dragLine"><span></span></div>
+                            <input type="range" min="0" max="100" value="50">
+                        </div>
+                    </div>
+                    <div class="comp-legend"><span>NeRF</span><span>DA4NeRF</span></div>
+                </div>
+
+                <div class="comparison">
+                    <p class="comp-label">Orchid</p>
+                    <div class="wrapper">
+                        <div class="image">
+                            <div class="img-base" style="background-image: url('images/Orchid_000.png')"></div>
+                            <div class="img-overlay" style="background-image: url('images/Orchid_000_DA.png')"></div>
+                        </div>
+                        <div class="slider">
+                            <div class="dragLine"><span></span></div>
+                            <input type="range" min="0" max="100" value="50">
+                        </div>
+                    </div>
+                    <div class="comp-legend"><span>NeRF</span><span>DA4NeRF</span></div>
+                </div>
+
+                <div class="comparison">
+                    <p class="comp-label">UPM</p>
+                    <div class="wrapper">
+                        <div class="image">
+                            <div class="img-base" style="background-image: url('images/upm_2_orig.png')"></div>
+                            <div class="img-overlay" style="background-image: url('images/UPM_000_DA.png')"></div>
+                        </div>
+                        <div class="slider">
+                            <div class="dragLine"><span></span></div>
+                            <input type="range" min="0" max="100" value="50">
+                        </div>
+                    </div>
+                    <div class="comp-legend"><span>NeRF</span><span>DA4NeRF</span></div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Abstract -->
+        <section class="about">
+            <h2>Abstract</h2>
+            <p>Neural Radiance Fields (NeRF) achieve photorealistic novel view synthesis but typically require dense
+                multi-view captures. DA4NeRF addresses this limitation through a depth-guided data augmentation strategy
+                that synthesizes additional training views from estimated depth maps, significantly reducing the number
+                of input images required while maintaining high reconstruction quality across diverse scenes.</p>
+        </section>
+
+        <!-- Citation -->
+        <section class="citation">
+            <h2>Citation</h2>
+            <pre>@article{RAZAVIKHOSROSHAHI2025104365,
+  title   = {DA4NeRF: Depth-aware Augmentation technique for Neural Radiance Fields},
+  journal = {Journal of Visual Communication and Image Representation},
+  volume  = {107},
+  pages   = {104365},
+  year    = {2025},
+  issn    = {1047-3203},
+  doi     = {10.1016/j.jvcir.2024.104365},
+  url     = {https://www.sciencedirect.com/science/article/pii/S1047320324003213},
+  author  = {Hamed {Razavi Khosroshahi} and Jaime Sancho and Gun Bang
+             and Gauthier Lafruit and Eduardo Juarez and Mehrdad Teratani}
+}</pre>
+        </section>
+
     </section>
 
-    <section class="results">
-        <h2>Results</h2>
-        <p>Showcase of results...</p>
+    <!-- ======================================================
+         DDSNeRF
+    ====================================================== -->
+    <section id="ddsnerf" class="project-section">
+
+        <div class="hero">
+            <div class="hero-content">
+                <h1>DDSNeRF</h1>
+                <p class="project-subtitle"><!-- Add subtitle here --></p>
+                <p class="venue"><!-- Add venue / journal here --></p>
+
+                <div class="authors">
+                    <!-- Add authors here following the same pattern as DA4NeRF -->
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#" target="_blank" class="btn github">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="#" target="_blank" class="btn paper">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Paper</span>
+                    </a>
+                    <a href="#" target="_blank" class="btn data">
+                        <i class="fas fa-database"></i>
+                        <span>Dataset</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <section class="about">
+            <h2>Abstract</h2>
+            <p>Content coming soon.</p>
+        </section>
+
+        <section class="citation">
+            <h2>Citation</h2>
+            <pre><!-- Add BibTeX citation here --></pre>
+        </section>
+
     </section>
-    
-    <section class="citation">
-        <h2>Citation</h2>
-        <p>@article{RAZAVIKHOSROSHAHI2025104365, <br>
-            title = {DA4NeRF: Depth-aware Augmentation technique for Neural Radiance Fields},<br>
-            journal = {Journal of Visual Communication and Image Representation},<br>
-            volume = {107},<br>
-            pages = {104365},<br>
-            year = {2025},<br>
-            issn = {1047-3203},<br>
-            doi = {https://doi.org/10.1016/j.jvcir.2024.104365},<br>
-            url = {https://www.sciencedirect.com/science/article/pii/S1047320324003213},<br>
-            author = {Hamed {Razavi Khosroshahi} and Jaime Sancho and Gun Bang and Gauthier Lafruit and Eduardo Juarez and Mehrdad Teratani}}</p>
+
+    <!-- ======================================================
+         MTNeRF
+    ====================================================== -->
+    <section id="mtnerf" class="project-section">
+
+        <div class="hero">
+            <div class="hero-content">
+                <h1>MTNeRF</h1>
+                <p class="project-subtitle"><!-- Add subtitle here --></p>
+                <p class="venue"><!-- Add venue / journal here --></p>
+
+                <div class="authors">
+                    <!-- Add authors here following the same pattern as DA4NeRF -->
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#" target="_blank" class="btn github">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="#" target="_blank" class="btn paper">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Paper</span>
+                    </a>
+                    <a href="#" target="_blank" class="btn data">
+                        <i class="fas fa-database"></i>
+                        <span>Dataset</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <section class="about">
+            <h2>Abstract</h2>
+            <p>Content coming soon.</p>
+        </section>
+
+        <section class="citation">
+            <h2>Citation</h2>
+            <pre><!-- Add BibTeX citation here --></pre>
+        </section>
+
     </section>
+
     <footer>
-        <p>&copy; 2023 NeRF Project</p>
+        <p>&copy; 2025 Sparse NeRF Research &mdash; Hamed Razavi</p>
     </footer>
 
     <script src="script.js"></script>

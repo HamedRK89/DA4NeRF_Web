@@ -1,97 +1,82 @@
-// Select all slider elements inside each .wrapper
-document.querySelectorAll(".wrapper").forEach(wrapper => {
-    const image = wrapper.querySelector('.image .image-2, .image-4, .image-6');
-    const slider = wrapper.querySelector(".slider input");
-    const drag = wrapper.querySelector(".slider .dragLine");
-
-    // Update the image width and dragLine position when the slider moves
-    slider.oninput = () => {
-        let sliderVal = slider.value;
-        drag.style.left = sliderVal + "%";
-        image.style.width = sliderVal + "%";
-    };
-});
-
 document.addEventListener("DOMContentLoaded", function () {
-    const prevButton = document.querySelector(".arrow.prev");
-    const nextButton = document.querySelector(".arrow.next");
-    const videoContainer = document.querySelector(".videos");
-    const dotsContainer = document.querySelector(".dots");
-    const videoSlides = document.querySelectorAll(".video-slide");
-    const slideWidth = 400 + 20; // 400px video width + 20px for padding
-    let currentIndex = 0;
-    const totalSlides = videoSlides.length;
 
-    // Function to update active dot
-    function updateDots() {
-        document.querySelectorAll(".dot").forEach((dot, index) => {
-            dot.classList.toggle("active", index === currentIndex);
+    // --------------------------------------------------------
+    // Tab switching
+    // --------------------------------------------------------
+    document.querySelectorAll(".tab-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const target = btn.dataset.tab;
+            document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+            document.querySelectorAll(".project-section").forEach(s => s.classList.remove("active"));
+            btn.classList.add("active");
+            document.getElementById(target).classList.add("active");
+            window.scrollTo({ top: 0, behavior: "smooth" });
         });
-    }
+    });
 
-    // Create dots dynamically
-    function createDots() {
-        videoSlides.forEach((_, index) => {
+    // --------------------------------------------------------
+    // Image comparison sliders
+    // --------------------------------------------------------
+    document.querySelectorAll(".wrapper").forEach(wrapper => {
+        const overlay = wrapper.querySelector(".img-overlay");
+        const slider  = wrapper.querySelector(".slider input");
+        const drag    = wrapper.querySelector(".slider .dragLine");
+
+        slider.addEventListener("input", () => {
+            drag.style.left    = slider.value + "%";
+            overlay.style.width = slider.value + "%";
+        });
+    });
+
+    // --------------------------------------------------------
+    // Video carousels (one instance per data-carousel attribute)
+    // --------------------------------------------------------
+    document.querySelectorAll(".video-container").forEach(container => {
+        const carouselId    = container.dataset.carousel;
+        const prevBtn       = container.querySelector(".arrow.prev");
+        const nextBtn       = container.querySelector(".arrow.next");
+        const videosEl      = container.querySelector(".videos");
+        const dotsContainer = document.querySelector(`.dots[data-dots="${carouselId}"]`);
+        const slides        = container.querySelectorAll(".video-slide");
+        const slideWidth    = 420; // 400px video + 20px padding
+        let idx = 0;
+
+        function updateDots() {
+            dotsContainer.querySelectorAll(".dot").forEach((dot, i) => {
+                dot.classList.toggle("active", i === idx);
+            });
+        }
+
+        // Build dots
+        slides.forEach((_, i) => {
             const dot = document.createElement("span");
             dot.classList.add("dot");
-            if (index === 0) dot.classList.add("active");
+            if (i === 0) dot.classList.add("active");
             dot.addEventListener("click", () => {
-                currentIndex = index;
-                videoContainer.scrollTo({ left: currentIndex * slideWidth, behavior: "smooth" });
+                idx = i;
+                videosEl.scrollTo({ left: idx * slideWidth, behavior: "smooth" });
                 updateDots();
             });
             dotsContainer.appendChild(dot);
         });
-    }
 
-    nextButton.addEventListener("click", function () {
-        if (currentIndex < totalSlides - 1) {
-            currentIndex++;
-            videoContainer.scrollBy({ left: slideWidth, behavior: "smooth" });
-            updateDots();
-        }
+        nextBtn.addEventListener("click", () => {
+            if (idx < slides.length - 1) {
+                idx++;
+                videosEl.scrollBy({ left: slideWidth, behavior: "smooth" });
+                updateDots();
+            }
+        });
+
+        prevBtn.addEventListener("click", () => {
+            if (idx > 0) {
+                idx--;
+                videosEl.scrollBy({ left: -slideWidth, behavior: "smooth" });
+                updateDots();
+            }
+        });
     });
 
-    prevButton.addEventListener("click", function () {
-        if (currentIndex > 0) {
-            currentIndex--;
-            videoContainer.scrollBy({ left: -slideWidth, behavior: "smooth" });
-            updateDots();
-        }
-    });
-
-    createDots();
+    // Autoplay all videos
+    document.querySelectorAll("video").forEach(v => v.play());
 });
-
-
-
-
-// Previous button click event
-prevButton.addEventListener("click", () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-    } else {
-        // Loop to the last set of slides
-        currentIndex = videosContainer.children.length - visibleSlides;
-    }
-    updateVideos();
-});
-
-// Next button click event
-nextButton.addEventListener("click", () => {
-    if (currentIndex < videosContainer.children.length - visibleSlides) {
-        currentIndex++;
-    } else {
-        // Loop to the first set of slides
-        currentIndex = 0;
-    }
-    updateVideos();
-});
-
-// Ensure all videos are playing and looping
-const allVideos = document.querySelectorAll(".video-slide video");
-allVideos.forEach((video) => {
-    video.loop = true; // Loop the video
-    video.play(); // Autoplay the video
-});
-
