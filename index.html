@@ -294,23 +294,23 @@
 
         <section class="about">
             <h2>Abstract</h2>
-            <p>Content coming soon.</p>
+            <p>Neural Radiance Fields (NeRF) have shown remarkable performance in novel view synthesis and
+                3D scene reconstruction, but they often require dense multi-view datasets for effective training.
+                In scenarios with sparse multi-camera acquisition setup, augmentation strategies using DIBR can
+                create additional views to enrich the training pool. However, these augmented views are inherently
+                noisy and may degrade reconstruction quality when directly used. To address this, we propose MTNeRF,
+                a multi-task learning framework that improves NeRF training with augmented views. Our approach
+                introduces a branched network design where the primary head is trained with original views and an
+                auxiliary head processes the augmented views. This separation enables the network to suppress noise
+                in augmented data while still leveraging their semantic value for representation learning. Inspired
+                by multi-task learning strategies in data augmentation, MTNeRF effectively improves robustness to
+                noisy augmented inputs. Experimental results demonstrate that our method enhances reconstruction
+                quality on sparse datasets and outperforms standard NeRF training with augmentation.</p>
         </section>
 
         <section class="citation">
             <h2>Citation</h2>
-            <pre>Neural Radiance Fields (NeRF) have shown remarkable performance in novel view synthesis and
-                3D scene reconstruction, but they often require dense multi-view datasets for effective training.
-                In scenarios with sparse multi-camera acquisition setup, augmentation strategies using DIBR can 
-                create additional views to enrich the training pool. However, these augmented views are inherently 
-                noisy and may degrade reconstruction quality when directly used. To address this, we propose MTNeRF, 
-                a multi-task learning framework that improves NeRF training with augmented views. Our approach 
-                introduces a branched network design where the primary head is trained with original views and an 
-                auxiliary head processes the augmented views. This separation enables the network to suppress noise 
-                in augmented data while still leveraging their semantic value for representation learning. Inspired
-                by multi-task learning strategies in data augmentation, MTNeRF effectively improves robustness to 
-                noisy augmented inputs. Experimental results demonstrate that our method enhances reconstruction 
-                quality on sparse datasets and outperforms standard NeRF training with augmentation.
+            <pre>
             </pre>
         </section>
 
