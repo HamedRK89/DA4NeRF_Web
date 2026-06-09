@@ -136,7 +136,7 @@
                         <!-- Invisible range input handles drag interaction -->
                         <input class="comp-range" type="range" min="0" max="100" value="50">
                     </div>
-                    <div class="comp-legend"><span>DA4NeRF</span><span>NeRF</span></div>
+                    <div class="comp-legend"><span>NeRF</span><span>DA4NeRF</span></div>
                 </div>
 
                 <div class="comparison">
@@ -151,7 +151,7 @@
                         </div>
                         <input class="comp-range" type="range" min="0" max="100" value="50">
                     </div>
-                    <div class="comp-legend"><span>DA4NeRF</span><span>NeRF</span></div>
+                    <div class="comp-legend"><span>NeRF</span><span>DA4NeRF</span></div>
                 </div>
 
                 <div class="comparison">
@@ -166,7 +166,7 @@
                         </div>
                         <input class="comp-range" type="range" min="0" max="100" value="50">
                     </div>
-                    <div class="comp-legend"><span>DA4NeRF</span><span>NeRF</span></div>
+                    <div class="comp-legend"><span>NeRF</span><span>DA4NeRF</span></div>
                 </div>
 
             </div>
@@ -240,6 +240,64 @@
             </div>
         </div>
 
+        <!-- Image Comparison -->
+        <section class="comparison-row">
+            <h2>Qualitative Comparison</h2>
+            <p class="comp-subtitle">Drag the slider to compare baseline NeRF (left) vs DA4NeRF (right)</p>
+            <div class="comparisons-grid">
+
+                <div class="comparison">
+                    <p class="comp-label">Fortress</p>
+                    <div class="comp-wrapper">
+                        <!-- Right image: always full-size base layer -->
+                        <div class="comp-right" style="background-image: url('images/Fortress_000_DA.png')"></div>
+                        <!-- Left image: curtain container (overflow hidden) -->
+                        <div class="comp-left-clip">
+                            <div class="comp-left" style="background-image: url('images/Fortress_000.png')"></div>
+                        </div>
+                        <!-- Divider line with handle -->
+                        <div class="comp-divider">
+                            <div class="comp-handle"></div>
+                        </div>
+                        <!-- Invisible range input handles drag interaction -->
+                        <input class="comp-range" type="range" min="0" max="100" value="50">
+                    </div>
+                    <div class="comp-legend"><span>NeRF</span><span>DA4NeRF</span></div>
+                </div>
+
+                <div class="comparison">
+                    <p class="comp-label">Orchid</p>
+                    <div class="comp-wrapper">
+                        <div class="comp-right" style="background-image: url('images/Orchid_000_DA.png')"></div>
+                        <div class="comp-left-clip">
+                            <div class="comp-left" style="background-image: url('images/Orchid_000.png')"></div>
+                        </div>
+                        <div class="comp-divider">
+                            <div class="comp-handle"></div>
+                        </div>
+                        <input class="comp-range" type="range" min="0" max="100" value="50">
+                    </div>
+                    <div class="comp-legend"><span>NeRF</span><span>DA4NeRF</span></div>
+                </div>
+
+                <div class="comparison">
+                    <p class="comp-label">UPM</p>
+                    <div class="comp-wrapper">
+                        <div class="comp-right" style="background-image: url('images/UPM_000_DA.png')"></div>
+                        <div class="comp-left-clip">
+                            <div class="comp-left" style="background-image: url('images/upm_2_orig.png')"></div>
+                        </div>
+                        <div class="comp-divider">
+                            <div class="comp-handle"></div>
+                        </div>
+                        <input class="comp-range" type="range" min="0" max="100" value="50">
+                    </div>
+                    <div class="comp-legend"><span>NeRF</span><span>DA4NeRF</span></div>
+                </div>
+
+            </div>
+        </section>
+
         <section class="about">
             <h2>Abstract</h2>
             <p>Neural Radiance Fields (NeRF) have shown remarkable performance in novel view synthesis and
@@ -291,6 +349,64 @@
                 </div>
             </div>
         </div>
+
+        <!-- Image Comparison -->
+        <section class="comparison-row">
+            <h2>Qualitative Comparison</h2>
+            <p class="comp-subtitle">Drag the slider to compare baseline NeRF (left) vs DA4NeRF (right)</p>
+            <div class="comparisons-grid">
+
+                <div class="comparison">
+                    <p class="comp-label">Fortress</p>
+                    <div class="comp-wrapper">
+                        <!-- Right image: always full-size base layer -->
+                        <div class="comp-right" style="background-image: url('images/Fortress_000_DA.png')"></div>
+                        <!-- Left image: curtain container (overflow hidden) -->
+                        <div class="comp-left-clip">
+                            <div class="comp-left" style="background-image: url('images/Fortress_000.png')"></div>
+                        </div>
+                        <!-- Divider line with handle -->
+                        <div class="comp-divider">
+                            <div class="comp-handle"></div>
+                        </div>
+                        <!-- Invisible range input handles drag interaction -->
+                        <input class="comp-range" type="range" min="0" max="100" value="50">
+                    </div>
+                    <div class="comp-legend"><span>NeRF</span><span>DA4NeRF</span></div>
+                </div>
+
+                <div class="comparison">
+                    <p class="comp-label">Orchid</p>
+                    <div class="comp-wrapper">
+                        <div class="comp-right" style="background-image: url('images/Orchid_000_DA.png')"></div>
+                        <div class="comp-left-clip">
+                            <div class="comp-left" style="background-image: url('images/Orchid_000.png')"></div>
+                        </div>
+                        <div class="comp-divider">
+                            <div class="comp-handle"></div>
+                        </div>
+                        <input class="comp-range" type="range" min="0" max="100" value="50">
+                    </div>
+                    <div class="comp-legend"><span>NeRF</span><span>DA4NeRF</span></div>
+                </div>
+
+                <div class="comparison">
+                    <p class="comp-label">UPM</p>
+                    <div class="comp-wrapper">
+                        <div class="comp-right" style="background-image: url('images/UPM_000_DA.png')"></div>
+                        <div class="comp-left-clip">
+                            <div class="comp-left" style="background-image: url('images/upm_2_orig.png')"></div>
+                        </div>
+                        <div class="comp-divider">
+                            <div class="comp-handle"></div>
+                        </div>
+                        <input class="comp-range" type="range" min="0" max="100" value="50">
+                    </div>
+                    <div class="comp-legend"><span>NeRF</span><span>DA4NeRF</span></div>
+                </div>
+
+            </div>
+        </section>
 
         <section class="about">
             <h2>Abstract</h2>
