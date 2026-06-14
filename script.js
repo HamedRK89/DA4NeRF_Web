@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.querySelectorAll(".project-section").forEach(s => s.classList.remove("active"));
             btn.classList.add("active");
             document.getElementById(target).classList.add("active");
+            window.dispatchEvent(new Event("resize"));
             window.scrollTo({ top: 0, behavior: "smooth" });
         });
     });
